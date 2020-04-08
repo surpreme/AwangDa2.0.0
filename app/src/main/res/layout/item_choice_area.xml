@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.jiananshop.a.R" />
+
+        <variable
+            name="viewModel"
+            type="com.aite.a.activity.li.activity.choicearea.ChoiceAreaItemViewModel" />
+
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|left"
+        android:padding="5dp"
+        android:text="@={viewModel.iconTitle}"
+        binding:onClickCommand="@{viewModel.onLookInformation}">
+
+
+    </TextView>
+</layout>

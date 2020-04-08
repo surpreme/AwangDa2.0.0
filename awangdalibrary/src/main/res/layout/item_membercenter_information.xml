@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/member_information_cl"
+    android:layout_width="match_parent"
+    android:layout_height="161dp">
+
+    <ImageView
+        android:id="@+id/member_back_iv"
+        android:layout_width="match_parent"
+        android:layout_height="161dp"
+        android:scaleType="fitXY"
+        android:alpha="0.9"
+        android:src="@mipmap/membercenter_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.valy.baselibrary.utils.view.ImageViewPlus
+        android:id="@+id/uselogo_iv"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="25dp"
+        android:src="@drawable/user_default_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="会员中心"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/setting_iv"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginRight="15dp"
+        android:src="@mipmap/aw_setting_logo"
+        app:layout_constraintBottom_toBottomOf="@id/title_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title_tv" />
+
+    <TextView
+        android:id="@+id/user_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:text="相隔远川（16138443）"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/uselogo_iv"
+        app:layout_constraintLeft_toRightOf="@id/uselogo_iv"
+        app:layout_constraintTop_toTopOf="@id/uselogo_iv" />
+
+    <ImageView
+        android:id="@+id/balance_logo_iv"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginBottom="33dp"
+        android:src="@mipmap/balance_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/uselogo_iv"
+        app:layout_constraintStart_toEndOf="@+id/uselogo_iv" />
+
+    <TextView
+        android:id="@+id/balance_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:text="我的余额"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/balance_logo_iv"
+        app:layout_constraintLeft_toRightOf="@id/balance_logo_iv"
+        app:layout_constraintTop_toTopOf="@id/balance_logo_iv" />
+
+    <TextView
+        android:id="@+id/balance_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="￥159"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@id/balance_title_tv"
+        app:layout_constraintRight_toRightOf="@id/balance_title_tv"
+        app:layout_constraintTop_toBottomOf="@id/balance_title_tv" />
+
+    <ImageView
+        android:id="@+id/integral_logo_iv"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginLeft="30dp"
+        android:src="@mipmap/integral_logo"
+        app:layout_constraintBottom_toBottomOf="@id/balance_logo_iv"
+        app:layout_constraintLeft_toRightOf="@id/balance_title_tv"
+        app:layout_constraintTop_toTopOf="@id/balance_logo_iv" />
+
+    <TextView
+        android:id="@+id/integral_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:text="我的积分"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/integral_logo_iv"
+        app:layout_constraintLeft_toRightOf="@id/integral_logo_iv"
+        app:layout_constraintTop_toTopOf="@id/integral_logo_iv" />
+
+    <TextView
+        android:id="@+id/integral_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="7569"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@id/integral_title_tv"
+        app:layout_constraintRight_toRightOf="@id/integral_title_tv"
+        app:layout_constraintTop_toBottomOf="@id/integral_title_tv" />
+
+
+    <ImageView
+        android:id="@+id/gold_logo_iv"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="95dp"
+        android:src="@mipmap/integral_logo"
+        app:layout_constraintBottom_toBottomOf="@id/balance_logo_iv"
+        app:layout_constraintLeft_toRightOf="@+id/integral_title_tv"
+        app:layout_constraintTop_toTopOf="@id/balance_logo_iv" />
+
+    <TextView
+        android:id="@+id/gold_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:text="我的金币"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/gold_logo_iv"
+        app:layout_constraintLeft_toRightOf="@id/gold_logo_iv"
+        app:layout_constraintTop_toTopOf="@id/gold_logo_iv" />
+
+    <TextView
+        android:id="@+id/gold_content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="23"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@id/gold_title_tv"
+        app:layout_constraintRight_toRightOf="@id/gold_title_tv"
+        app:layout_constraintTop_toBottomOf="@id/gold_title_tv" />
+</androidx.constraintlayout.widget.ConstraintLayout>

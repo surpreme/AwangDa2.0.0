@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp">
+
+    <CheckBox
+        android:id="@+id/selected_rb"
+        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:buttonTint="@color/red" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_zhuitem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_goodstu"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <TextView
+            android:id="@+id/tv_goodsnamemi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_toLeftOf="@+id/iv_close"
+            android:layout_toRightOf="@+id/iv_goodstu"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试据测试数据测试数据测试据测试数据测试数据测试数据" />
+
+        <TextView
+            android:id="@+id/tv_rmb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tv_goodsnamemi"
+            android:layout_alignLeft="@+id/tv_goodsnamemi"
+            android:layout_alignBottom="@+id/iv_goodstu"
+            android:layout_marginBottom="10dp"
+            android:paddingBottom="2dp"
+            android:text="¥"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/tv_goodsprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_rmb"
+            android:layout_toRightOf="@+id/tv_rmb"
+            android:text="499.00"
+            android:textColor="@color/red"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/iv_goodstu"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/delete_big"
+            android:tint="@color/red" />
+    </RelativeLayout>
+
+
+</LinearLayout>

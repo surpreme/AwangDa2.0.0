@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_ll"
+        layout="@layout/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FF5000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:padding="3dp"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/back" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="确认支付"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/order_number_tv"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/white"
+        android:gravity="center|left"
+        android:paddingLeft="15dp"
+        tools:text="订单编号：541314316351431312"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_ll" />
+
+    <View
+        android:id="@+id/order_number_line"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#EDEBEF"
+        app:layout_constraintTop_toBottomOf="@id/order_number_tv" />
+
+    <TextView
+        android:id="@+id/all_price_tv"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/white"
+        android:gravity="center|left"
+        android:paddingLeft="15dp"
+        tools:text="总价： $100.00"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/order_number_line" />
+
+    <View
+        android:id="@+id/all_price_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EDEBEF"
+        app:layout_constraintTop_toBottomOf="@id/all_price_tv" />
+
+    <TextView
+        android:id="@+id/bank_price_tv"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/white"
+        android:gravity="center|left"
+        android:paddingLeft="15dp"
+        tools:text="银行-第三方手续费：1%   $1.00"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/all_price_line" />
+
+    <View
+        android:id="@+id/bank_price_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EDEBEF"
+        app:layout_constraintTop_toBottomOf="@id/bank_price_tv" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pay_list_recy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/bank_price_line" />
+
+    <View
+        android:id="@+id/recy_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EDEBEF"
+        app:layout_constraintTop_toBottomOf="@id/pay_list_recy" />
+    <!--1.4-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="191dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pay_list_recy">
+
+        <ImageView
+            android:id="@+id/recommend_background_iv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/recommend"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:rotation="-45"
+            android:text="推荐"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintLeft_toLeftOf="@+id/recommend_background_iv"
+            app:layout_constraintTop_toTopOf="@+id/recommend_background_iv" />
+
+        <ImageView
+            android:id="@+id/pay_image_iv"
+            android:layout_width="22dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/pay_name_tv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pay_name_tv"
+            android:layout_width="121dp"
+            android:layout_height="27dp"
+            android:layout_marginRight="5dp"
+            android:text="零钱包($1000.00)"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/pay_image_iv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="33dp"
+            android:src="@mipmap/pay_list_check"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/all_price_over_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:paddingLeft="35dp"
+        tools:text="总计：$101.00"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/sure_pay_btn"
+        android:layout_width="91.5dp"
+        android:layout_height="45dp"
+        android:background="#FF5000"
+        android:text="@string/Paynow"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

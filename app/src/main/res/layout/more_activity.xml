@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/personal_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_titile_sort" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/m_m_1f"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="20dp"
+                android:gravity="center_vertical"
+                android:text="@string/clean_cache_picture" />
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/more_rl_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/m_m_1f"
+                android:drawablePadding="20dp"
+                android:gravity="center_vertical"
+                android:text="@string/clean_cache_picture" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/more_d" />
+        </RelativeLayout>
+
+        <View style="@style/view_line" />
+
+        <RelativeLayout
+            android:id="@+id/more_rl_guide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/m_m_2"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="@string/welcome_page" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/more_d" />
+        </RelativeLayout>
+
+        <View style="@style/view_line" />
+
+        <RelativeLayout
+            android:id="@+id/more_rl_xieyi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/m_m_3"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="@string/service_agreement" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/more_d" />
+        </RelativeLayout>
+
+        <View
+            style="@style/view_line"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/more_rl_check_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/m_m_4f"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="@string/check_for_update" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/more_d" />
+        </RelativeLayout>
+
+        <View style="@style/view_line" />
+
+        <RelativeLayout
+            android:id="@+id/more_rl_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/m_m_5"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="@string/about" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/more_d" />
+        </RelativeLayout>
+
+        <View style="@style/view_line" />
+
+        <RelativeLayout
+            android:id="@+id/change_language_rl_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/change_laguage_logo"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:text="切换语言" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/more_d" />
+        </RelativeLayout>
+
+        <View style="@style/view_line" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/more_btn_exit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:background="@color/commRed"
+            android:text="@string/exit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_14" />
+        <!--android:background="@drawable/gm_selector"-->
+
+    </RelativeLayout>
+</LinearLayout>

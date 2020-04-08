@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent">
+
+    <item
+        android:id="@+id/main_house"
+        android:icon="@drawable/home_tab_main_selector"
+        android:title="@string/tab_home" />
+
+    <item
+        android:id="@+id/main_chocie"
+        android:icon="@drawable/home_tab_category_selector"
+        android:title="@string/collectionfcf" />
+
+    <item
+        android:id="@+id/main_message"
+        android:icon="@drawable/home_tab_periphery_selector"
+        android:title="@string/tab_periphery" />
+
+    <item
+        android:id="@+id/main_shopCard"
+        android:icon="@drawable/home_tab_cart_selector"
+        android:title="@string/tab_cart" />
+
+    <item
+        android:id="@+id/main_person"
+        android:icon="@drawable/home_tab_personal_selector"
+        android:title="@string/member_center" />
+</menu>

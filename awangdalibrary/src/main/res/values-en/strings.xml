@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="product">Item</string>
+    <string name="details">Details</string>
+    <string name="comment">Comment</string>
+    <string name="store">Store</string>
+    <string name="chat">Chat</string>
+    <string name="favorite">Favorite</string>
+    <string name="addtocart">Add to Cart </string>
+    <string name="buynow">Buy Now</string>
+    <string name="allitems">All Items</string>
+    <string name="visitstore">Visit Store</string>
+    <string name="recommend">Recommend</string>
+    <string name="delivery">Delivery:0.00</string>
+    <string name="sales">Sales:</string>
+    <string name="itemcomment"> Item Comment</string>
+    <string name="marketprice">Market Price：</string>
+    <string name="numberu">Number:</string>
+    <string name="sure">Sure</string>
+    <string name="orderdetails"> Order Details</string>
+    <string name="ordertime">Order Time:</string>
+    <string name="orderno">Order No:</string>
+    <string name="receiver">Receiver</string>
+    <string name="contact">Receiver</string>
+    <string name="receiveAddress">Receive Address</string>
+    <string name="BuyerMessage">Buyer\'sMessage:</string>
+    <string name="storeName">Store Name:</string>
+    <string name="address">Address:</string>
+    <string name="itemPrice">Item Price</string>
+    <string name="freight">Freight</string>
+    <string name="actualPayment">Actual Payment</string>
+    <string name="handlingFee">Handling Fee</string>
+    <string name="all_orders">All Orders</string>
+    <string name="allGoods">All Items</string>
+    <string name="items">Items</string>
+    <string name="collectjn">Favorite List</string>
+    <string name="sellerinformation">Seller Information</string>
+    <string name="receiverinformation">Receiver Information</string>
+
+</resources>

@@ -1,0 +1,23 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aite.awangdalibrary">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application>
+        <activity android:name=".ui.activity.LogInKotlinActivity" />
+        <activity android:name=".ui.activity.findpassword.FindPassWordKotlinActivity" />
+        <activity android:name=".ui.activity.registered.RegisteredKotlinActivity" />
+        <activity android:name=".ui.activity.coupon.CouponKotlinActivity" />
+        <activity
+            android:name=".ui.activity.transfer.TransferKotlinActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".ui.activity.membercenter.MemberCenterKotlinActivity" />
+        <activity android:name=".ui.activity.orderinformation.OrderInformationKotlinActivity" />
+        <activity android:name=".ui.activity.productdetails.ProductDetailsKotlinActivity" />
+        <activity android:name=".ui.activity.search.SearchKotlinActivity" />
+        <activity android:name=".ui.activity.collectlist.CollectListKotlinActivity" />
+        <activity android:name=".ui.activity.foot.FootKotlinActivity" />
+        <activity android:name=".ui.activity.system.SystemKotlinMsgActivity" />
+        <activity android:name=".ui.activity.systeminformation.SystemInformationKotlinActivity" />
+        <activity android:name=".ui.activity.GoodsVideoActivity" />
+    </application>
+</manifest>

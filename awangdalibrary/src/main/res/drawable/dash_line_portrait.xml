@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="90"
+    android:toDegrees="90">
+    <!--    纵向虚线-->
+    <!--    https://www.jianshu.com/p/75cf6acd7e80-->
+    <shape android:shape="line">
+        <stroke
+            android:width="1dp"
+            android:color="#ffffff"
+            android:dashWidth="21dp"
+            android:dashGap="2dp" />
+    </shape>
+</rotate>

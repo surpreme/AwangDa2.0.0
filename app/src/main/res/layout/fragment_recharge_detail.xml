@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/order_info_tv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#FCF8E3"
+        android:gravity="center|left"
+        android:paddingLeft="15dp"
+        android:text="可用金额 ：$1230.00       冻结金额 ：$22265.00"
+        android:textColor="#C09853"
+        android:textSize="13sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        layout="@layout/recycler_smart_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_info_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

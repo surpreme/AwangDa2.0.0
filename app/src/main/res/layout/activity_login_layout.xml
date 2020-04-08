@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.aite.a.activity.li.activity.login.LogInViewHolder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/title_ll"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:padding="3dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/back" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@={viewModel.title}"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="155dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="50dp"
+            android:background="@color/white"
+            android:paddingBottom="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/phone_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/phone_login_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{viewModel.hidePhone}">
+
+                    <TextView
+                        android:id="@+id/area_name_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.countryStr}" />
+
+
+                    <ImageView
+                        android:id="@+id/area_icon_iv"
+                        android:layout_width="26dp"
+                        android:layout_height="13dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        binding:imageUrl="@{viewModel.countryIconUrl}" />
+
+                    <TextView
+                        android:id="@+id/area_code_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.countryCodeStr}" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="3dp"
+                        android:src="@drawable/low" />
+
+
+                    <EditText
+                        android:id="@+id/phone_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@null"
+                        android:hint="@string/logineditphonenum"
+                        android:text="@={viewModel.userPhoneEdit}"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/account_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="@{viewModel.hideAcount}">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/login_user_name" />
+
+
+                        <EditText
+                            android:id="@+id/number_get_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:hint="用户名"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:text="@={viewModel.userName}"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/phone_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/nogray"
+                app:layout_constraintBottom_toBottomOf="@+id/phone_ll" />
+
+
+            <LinearLayout
+                android:id="@+id/password_ll"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/phone_line">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/lock" />
+
+                    <EditText
+                        android:id="@+id/key_get_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="@string/loginedtpass"
+                        android:inputType="textPassword"
+                        android:paddingLeft="10dp"
+                        android:text="@={viewModel.passWord}"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/password_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/nogray"
+                app:layout_constraintBottom_toBottomOf="@+id/password_ll" />
+
+            <CheckBox
+                android:id="@+id/remember_password_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:button="?android:listChoiceIndicatorSingle"
+                android:buttonTint="@color/red"
+                android:checked="@={viewModel.isRememberPassword}"
+                android:text="@string/rememberpass"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/password_line"
+                binding:onCheckedListener="@{viewModel.rememberPasswordListener}" />
+
+            <TextView
+                android:id="@+id/find_key_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loginfindpassword"
+                android:textColor="@color/red"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/remember_password_checkbox"
+                app:layout_constraintRight_toRightOf="@+id/password_line"
+                app:layout_constraintTop_toTopOf="@id/remember_password_checkbox"
+                binding:onClickCommand="@{viewModel.findKeyOnClick}" />
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/btn_save_item03"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                app:layout_constraintTop_toBottomOf="@id/remember_password_checkbox"
+                binding:onClickCommand="@{viewModel.loginOnClick}" />
+
+            <TextView
+                android:id="@+id/login_away_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@={viewModel.logInAwayTips}"
+                android:textColor="@color/red"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_btn"
+                binding:onClickCommand="@{viewModel.switchLogInAwayOnClick}" />
+
+            <TextView
+                android:id="@+id/newuser_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/Register"
+                android:textColor="@color/red"
+                android:textSize="12sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_btn"
+                binding:onClickCommand="@{viewModel.registeredOnClick}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/nogray"
+            app:layout_constraintBottom_toBottomOf="@+id/three_login_titles_tv"
+            app:layout_constraintRight_toLeftOf="@+id/three_login_titles_tv"
+            app:layout_constraintTop_toTopOf="@+id/three_login_titles_tv" />
+
+        <TextView
+            android:id="@+id/three_login_titles_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:text="@string/quicklogin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <View
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/nogray"
+            app:layout_constraintBottom_toBottomOf="@+id/three_login_titles_tv"
+            app:layout_constraintLeft_toRightOf="@+id/three_login_titles_tv"
+            app:layout_constraintTop_toTopOf="@+id/three_login_titles_tv" />
+
+        <!--        <com.facebook.login.widget.LoginButton-->
+        <!--            android:id="@+id/facebook_login_button"-->
+        <!--            android:layout_width="50dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_marginLeft="15dp"-->
+        <!--            android:layout_marginRight="15dp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/wechat_login_iv"-->
+        <!--            app:layout_constraintRight_toLeftOf="@+id/wechat_login_iv"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/wechat_login_iv" />-->
+
+        <ImageView
+            android:id="@+id/facebook_login_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/facebook"
+            app:layout_constraintBottom_toBottomOf="@+id/wechat_login_iv"
+            app:layout_constraintRight_toLeftOf="@+id/wechat_login_iv"
+            app:layout_constraintTop_toTopOf="@id/wechat_login_iv" />
+
+        <ImageView
+            android:id="@+id/wechat_login_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/wechat"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <ImageView
+            android:id="@+id/instagram_logIn_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/instagram"
+            app:layout_constraintBottom_toBottomOf="@+id/wechat_login_iv"
+            app:layout_constraintLeft_toRightOf="@+id/wechat_login_iv"
+            app:layout_constraintTop_toTopOf="@id/wechat_login_iv" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="85dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_logooo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

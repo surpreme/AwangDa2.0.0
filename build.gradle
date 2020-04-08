@@ -1,0 +1,41 @@
+apply from: "config.gradle"
+
+buildscript {
+    ext.kotlin_version = '1.3.61'
+    repositories {
+        jcenter()
+        maven { url 'https://dl.bintray.com/umsdk/release' }
+        google()
+        mavenCentral()
+
+    }
+    dependencies {
+        classpath 'com.android.tools:r8:1.5.70'          // Must be before the Gradle Plugin for Android.
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+        //标签
+        maven { url 'https://jitpack.io' }
+        google()
+        maven { url 'https://dl.bintray.com/umsdk/release' }
+        maven {
+            url 'http://storage.googleapis.com/r8-releases/raw'
+        }
+    }
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+
+        <import type="android.widget.LinearLayout" />
+
+        <import type="me.tatarka.bindingcollectionadapter2.BindingRecyclerViewAdapter" />
+
+        <variable
+            name="adapter"
+            type="BindingRecyclerViewAdapter" />
+
+        <variable
+            name="advertisementItemBindingAdapter"
+            type="BindingRecyclerViewAdapter" />
+
+        <variable
+            name="goodsListItemBindingAdapter"
+            type="BindingRecyclerViewAdapter" />
+
+        <variable
+            name="mainHouse3RecyViewHolder"
+            type="BindingRecyclerViewAdapter" />
+
+        <variable
+            name="viewModel"
+            type="com.aite.a.activity.li.fragment.houseFragment.MainHouseFragentViewHolder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/search_cl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/contact_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:padding="5dp"
+                android:src="@drawable/type_choice"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                binding:onClickCommand="@{viewModel.onLookSort}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/contact_iv"
+                app:layout_constraintRight_toRightOf="@id/contact_iv"
+                app:layout_constraintTop_toBottomOf="@id/contact_iv" />
+            <!--            android:gravity="center|left"-->
+
+            <TextView
+                android:id="@+id/search_tv"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/background_corner_gray2"
+                android:gravity="center|left"
+                android:paddingLeft="35dp"
+                android:text="@string/searchTips"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/contact_iv"
+                app:layout_constraintRight_toLeftOf="@id/message_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                binding:onClickCommand="@{viewModel.onToSearch}" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/search_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/message_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:padding="5dp"
+                android:src="@drawable/message"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                binding:onClickCommand="@{viewModel.onMessageSort}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/message"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/message_iv"
+                app:layout_constraintRight_toRightOf="@id/message_iv"
+                app:layout_constraintTop_toBottomOf="@id/message_iv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        <RelativeLayout-->
+        <!--            android:id="@+id/title_rl"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:background="@color/white"-->
+        <!--            android:focusable="true"-->
+        <!--            android:paddingLeft="10dp"-->
+        <!--            android:paddingRight="10dp"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--                android:id="@+id/sort_cl"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content">-->
+
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/sort_iv"-->
+        <!--                    android:layout_width="16dp"-->
+        <!--                    android:layout_height="16dp"-->
+        <!--                    android:layout_marginLeft="8dp"-->
+        <!--                    android:layout_marginTop="7dp"-->
+        <!--                    android:src="@drawable/type_choice"-->
+        <!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent"-->
+        <!--                    binding:onClickCommand="@{viewModel.onLookSort}" />-->
+
+        <!--                <TextView-->
+        <!--                    android:id="@+id/sort_tv"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="@string/Category"-->
+        <!--                    android:textSize="11sp"-->
+        <!--                    app:layout_constraintLeft_toLeftOf="@id/sort_iv"-->
+        <!--                    app:layout_constraintRight_toRightOf="@id/sort_iv"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@id/sort_iv"-->
+        <!--                    binding:onClickCommand="@{viewModel.onLookSort}" />-->
+        <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/tv_search"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="30dp"-->
+        <!--                android:layout_alignParentBottom="true"-->
+        <!--                android:layout_marginLeft="0dp"-->
+        <!--                android:layout_marginEnd="16dp"-->
+        <!--                android:layout_marginRight="15dp"-->
+        <!--                android:layout_marginBottom="12dp"-->
+        <!--                android:layout_toLeftOf="@+id/message_cl"-->
+        <!--                android:layout_toRightOf="@+id/sort_cl"-->
+        <!--                android:background="#F4F4F4"-->
+        <!--                android:gravity="center|left"-->
+        <!--                android:hint="@string/homeserch"-->
+        <!--                android:imeOptions="actionSearch"-->
+        <!--                android:inputType="text"-->
+        <!--                android:paddingLeft="5dp"-->
+        <!--                android:paddingRight="5dp"-->
+        <!--                android:singleLine="true"-->
+        <!--                android:textColor="@color/gray"-->
+        <!--                android:textSize="10sp"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                binding:onClickCommand="@{viewModel.onToSearch}" />-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/et_search"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:layout_marginLeft="5dp"-->
+        <!--                android:layout_toLeftOf="@+id/message_cl"-->
+        <!--                android:layout_toRightOf="@+id/sort_cl"-->
+        <!--                android:background="#F4F4F4"-->
+        <!--                android:hint="@string/homeserch"-->
+        <!--                android:imeOptions="actionSearch"-->
+        <!--                android:inputType="text"-->
+        <!--                android:paddingLeft="5dp"-->
+        <!--                android:paddingRight="5dp"-->
+        <!--                android:singleLine="true"-->
+        <!--                android:text="@={viewModel.searchTv}"-->
+        <!--                android:textColor="@color/gray"-->
+        <!--                android:textSize="12sp"-->
+        <!--                android:visibility="gone" />-->
+        <!--            &lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+        <!--            <ImageView-->
+        <!--                android:id="@+id/iv_search"-->
+        <!--                android:layout_width="20dp"-->
+        <!--                android:layout_height="20dp"-->
+        <!--                android:layout_alignEnd="@+id/tv_search"-->
+        <!--                android:layout_centerVertical="true"-->
+        <!--                android:layout_marginEnd="@dimen/dp_2"-->
+        <!--                android:src="@drawable/search" />-->
+
+
+        <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--                android:id="@+id/message_cl"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_alignParentEnd="true"-->
+        <!--                android:layout_alignParentRight="true"-->
+        <!--                android:layout_marginEnd="0dp">-->
+
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/message_iv"-->
+        <!--                    android:layout_width="16dp"-->
+        <!--                    android:layout_height="16dp"-->
+        <!--                    android:layout_marginLeft="8dp"-->
+        <!--                    android:layout_marginTop="7dp"-->
+        <!--                    android:src="@drawable/message"-->
+        <!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent"-->
+        <!--                    binding:onClickCommand="@{viewModel.onMessageSort}" />-->
+
+        <!--                <TextView-->
+        <!--                    android:id="@+id/message_tv"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="@string/message"-->
+        <!--                    android:textSize="11sp"-->
+        <!--                    app:layout_constraintLeft_toLeftOf="@id/message_iv"-->
+        <!--                    app:layout_constraintRight_toRightOf="@id/message_iv"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@id/message_iv"-->
+        <!--                    binding:onClickCommand="@{viewModel.onMessageSort}" />-->
+        <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+        <!--        </RelativeLayout>-->
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_cl">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.youth.banner.Banner
+                    android:id="@+id/advertisement_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--                public static final int HORIZONTAL = 0;-->
+                <!--                public static final int VERTICAL = 1;-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/main_recyView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/advertisement_banner"
+                    binding:adapter="@{adapter}"
+                    binding:itemBinding="@{viewModel.itemBinding}"
+                    binding:itemCount="5"
+                    binding:items="@{viewModel.observableList}"
+                    binding:layoutManager="@{LayoutManagers.grid(5, 1,false)}" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/father_adv_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/main_recyView" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/goods_list_recyView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintTop_toBottomOf="@id/father_adv_ll"
+                    app:layout_constraintVertical_weight="1"
+                    binding:adapter="@{goodsListItemBindingAdapter}"
+                    binding:itemBinding="@{viewModel.goodlistItemBinding}"
+                    binding:items="@{viewModel.goodListObservableList}"
+                    binding:layoutManager="@{LayoutManagers.grid(2, 1,false)}" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

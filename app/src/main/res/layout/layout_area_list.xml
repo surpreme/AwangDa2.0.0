@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <TextView
+        android:id="@+id/tv_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="国家"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_country"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_country"
+        app:layout_constraintLeft_toRightOf="@id/tv_country"
+        app:layout_constraintTop_toTopOf="@id/tv_country"
+        app:srcCompat="@drawable/low" />
+
+    <TextView
+        android:id="@+id/tv_area_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="+855"
+        android:textColor="#5C5C5C"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_country"
+        app:layout_constraintLeft_toRightOf="@id/iv_country"
+        app:layout_constraintTop_toTopOf="@id/tv_country" />
+</androidx.constraintlayout.widget.ConstraintLayout>

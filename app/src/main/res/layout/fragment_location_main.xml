@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+
+        <import type="android.widget.LinearLayout" />
+
+        <import type="me.tatarka.bindingcollectionadapter2.BindingRecyclerViewAdapter" />
+
+        <import type="com.jiananshop.a.R" />
+
+        <variable
+            name="nearListItemBindingAdapter"
+            type="BindingRecyclerViewAdapter" />
+
+        <variable
+            name="viewModel"
+            type="com.aite.a.activity.li.fragment.locationFragment.LocationFragmentViewHolder" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="left|center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/search_img"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/nav_icon_search" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/_search_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="@string/search_goods"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:textColor="@color/gray"
+                    android:textSize="11sp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/location_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:text="" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/smartlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            binding:autoRefresh="@{viewModel.autoRefresh}"
+            binding:hasMore="@{viewModel.isHasMore}"
+            binding:onLoadMoreListener="@{viewModel.onLoadMoreListener}"
+            binding:onRefreshListener="@{viewModel.onRefreshListener}"
+            binding:refreshFooter="@{viewModel.classicsFooter}"
+            binding:refreshHeader="@{viewModel.waterDropHeader}">
+
+            <androidx.core.widget.NestedScrollView
+android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/top_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:scaleType="fitXY"
+                            binding:imageUrl="@{viewModel.topImageUrl}" />
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="10dp" />
+
+                        <TextView
+                            android:id="@+id/top_tv_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.top1Title}"
+                            android:textColor="@color/black"
+                            android:textSize="11sp"
+                            />
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="10dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/top_img_1_1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@android:color/holo_orange_light"
+                                binding:imageUrl="@{viewModel.top1_1url}" />
+
+                            <View
+                                android:layout_width="3dp"
+                                android:layout_height="10dp" />
+
+                            <ImageView
+                                android:id="@+id/top_img_1_2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@android:color/holo_red_light"
+                                binding:imageUrl="@{viewModel.top1_2url}" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="10dp" />
+
+                        <TextView
+                            android:id="@+id/top_tv_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.top2Title}"
+                            android:textColor="@color/black"
+                            android:textSize="11sp"
+                            />
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="10dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/top_img_2_1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@android:color/holo_orange_light"
+                                binding:imageUrl="@{viewModel.top2_1url}" />
+
+                            <View
+                                android:layout_width="2dp"
+                                android:layout_height="2dp" />
+
+                            <ImageView
+                                android:id="@+id/top_img_2_2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@android:color/holo_red_light"
+                                binding:imageUrl="@{viewModel.top2_2url}" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_classify"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/v_fg"
+                        android:background="@color/gainsboro"
+                        android:orientation="horizontal"
+                        android:paddingBottom="1dp">
+
+                        <LinearLayout
+                            android:id="@+id/tv_city"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/album_dp_1"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/nearby_distrinct_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:gravity="center"                android:textSize="11sp"
+
+                                android:text="@string/cityy" />
+
+                            <ImageView
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:layout_marginStart="@dimen/album_dp_2"
+                                android:src="@drawable/arrow_down" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tv_classification"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/nearby_category_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:gravity="center"                android:textSize="11sp"
+
+                                android:text="@string/tab_category" />
+
+                            <ImageView
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:layout_marginStart="@dimen/album_dp_2"
+                                android:src="@drawable/arrow_down" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tv_typee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/nearby_sort_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:gravity="center"
+                                android:text="@string/paixu" />
+
+                            <ImageView
+                                android:layout_width="@dimen/album_dp_10"
+                                android:layout_height="@dimen/album_dp_10"
+                                android:layout_marginStart="@dimen/album_dp_2"
+                                android:src="@drawable/arrow_down" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tv_distance"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/album_dp_1"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/nearby_distance_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:gravity="center"                android:textSize="11sp"
+
+                                android:text="@string/distancee" />
+
+                            <ImageView
+                                android:id="@+id/img_distance"
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:layout_marginStart="@dimen/album_dp_2"
+                                android:src="@drawable/arrow_down" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_reset"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@drawable/round_background_white"
+                            android:gravity="center"
+                            android:text="重置"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+
+                            android:id="@+id/recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            binding:adapter="@{nearListItemBindingAdapter}"
+                            binding:itemBinding="@{viewModel.itemBinding}"
+                            binding:items="@{viewModel.orderItemList}"
+                            binding:layoutManager="@{LayoutManagers.linear()}" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbars_lls"
+        layout="@layout/toolbar_layout" />
+
+    <View
+        android:id="@+id/top_line_view"
+        style="@style/top_line_gray_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbars_lls" />
+
+    <TextView
+        android:id="@+id/choice_bank_tv"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center|left"
+        android:paddingLeft="15dp"
+        android:text="请选择支付银行"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bank_down_iv"
+        app:layout_constraintTop_toBottomOf="@id/top_line_view" />
+
+    <ImageView
+        android:id="@+id/bank_down_iv"
+        android:layout_width="20dp"
+        android:layout_height="15dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/icon_down_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/choice_bank_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/choice_bank_tv" />
+
+    <View
+        android:id="@+id/choice_bank_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EDEBEF"
+        app:layout_constraintTop_toBottomOf="@id/choice_bank_tv" />
+
+    <TextView
+        android:id="@+id/user_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:text="账户："
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choice_bank_line" />
+
+
+    <View
+        android:id="@+id/user_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EDEBEF"
+        app:layout_constraintTop_toBottomOf="@id/user_tv" />
+
+    <TextView
+        android:id="@+id/user_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:text="账户名："
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_line" />
+
+
+    <View
+        android:id="@+id/user_name_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EDEBEF"
+        app:layout_constraintTop_toBottomOf="@id/user_name_tv" />
+
+    <TextView
+        android:id="@+id/pay_sure_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:text="上传付款凭证"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_line" />
+
+    <TextView
+        android:id="@+id/add_photos_tv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="15dp"
+        android:background="#EDEBEF"
+        android:gravity="center"
+        android:text="+"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pay_sure_title_tv" />
+
+    <ImageView
+        android:id="@+id/choice_iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="15dp"
+        android:scaleType="fitXY"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pay_sure_title_tv" />
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/critle_round_background_yellow"
+        android:text="@string/submitt"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+
+        <import type="android.widget.LinearLayout" />
+
+        <import type="me.tatarka.bindingcollectionadapter2.BindingRecyclerViewAdapter" />
+
+        <import type="com.jiananshop.a.R" />
+
+        <variable
+            name="orderListItemBindingAdapter"
+            type="BindingRecyclerViewAdapter" />
+
+        <variable
+            name="sellCenterListItemBindingAdapter"
+            type="BindingRecyclerViewAdapter" />
+
+        <variable
+            name="memberBenefitsListItemBindingAdapter"
+            type="BindingRecyclerViewAdapter" />
+
+        <variable
+            name="platformServiceListItemBindingAdapter"
+            type="BindingRecyclerViewAdapter" />
+
+        <variable
+            name="platformApplicationListItemBindingAdapter"
+            type="BindingRecyclerViewAdapter" />
+
+        <variable
+            name="guessLikeListItemBindingAdapter"
+            type="BindingRecyclerViewAdapter" />
+
+        <variable
+            name="viewModel"
+            type="com.aite.a.activity.li.fragment.settingFragment.SettingFragmentViewHolder" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/top_background_iv"
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/mine_bg"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                binding:imageUrl="@{viewModel.userIconBackGroundUrl}" />
+
+            <ImageView
+                android:id="@+id/user_icon_iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/top_background_iv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/top_background_iv"
+                binding:imageUrl="@{viewModel.userIconUrl}"
+                binding:isCircle="@{true}"
+                binding:onClickCommand="@{viewModel.onLookPersonMsg}" />
+
+            <TextView
+                android:id="@+id/user_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxWidth="120dp"
+                android:text="@={viewModel.userName}"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/top_background_iv"
+                app:layout_constraintLeft_toRightOf="@id/user_icon_iv"
+                app:layout_constraintTop_toTopOf="@id/top_background_iv"
+                binding:onClickCommand="@{viewModel.onLookPersonMsg}" />
+
+            <ImageView
+                android:id="@+id/setting_iv"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/me_setting"
+                app:layout_constraintBottom_toBottomOf="@id/top_background_iv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/top_background_iv"
+                binding:onClickCommand="@{viewModel.onGoSettingActivity}" />
+            <!--            binding:onClickCommand="@{viewModel.onGoQrCodeActivity}"-->
+            <ImageView
+                android:id="@+id/qr_iv"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/qrs"
+                app:layout_constraintBottom_toBottomOf="@id/top_background_iv"
+                app:layout_constraintRight_toLeftOf="@id/setting_iv"
+                app:layout_constraintTop_toTopOf="@id/top_background_iv"
+                app:layout_goneMarginRight="10dp" />
+
+            <TextView
+                android:id="@+id/mine_money_card_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="@string/minemoneycart"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_background_iv" />
+
+            <LinearLayout
+                android:id="@+id/mine_money_card_title_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_6"
+                app:layout_constraintTop_toBottomOf="@id/mine_money_card_title_tv">
+
+                <LinearLayout
+                    android:id="@+id/wallet_balance_ll"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    binding:onClickCommand="@{viewModel.onLookOverAgePrice}">
+
+                    <TextView
+                        android:id="@+id/tv_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="23443.35"
+                        android:textColor="#F33"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="@string/member_centre5"
+                        android:textColor="@color/text_color"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/wallet_freeze_ll"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    binding:onClickCommand="@{viewModel.onLookFreezePrice}">
+
+                    <TextView
+                        android:id="@+id/tv_freeze"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="23443.35"
+                        android:textColor="#F33"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="@string/member_centre2"
+                        android:textColor="@color/text_color"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/wallet_integral_ll"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    binding:onClickCommand="@{viewModel.onLookIntegral}">
+
+                    <TextView
+                        android:id="@+id/tv_integral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="23443.35"
+                        android:textColor="#F33"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="@string/member_centre1"
+                        android:textColor="@color/text_color"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/wallet_vouchers_ll"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    binding:onClickCommand="@{viewModel.onLookVoucher}">
+
+                    <TextView
+                        android:id="@+id/tv_voucher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="23443.35"
+                        android:textColor="#F33"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="@string/member_centre4"
+                        android:textColor="@color/text_color"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/wallet_present_ll"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_redenvelope"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="23443.35"
+                        android:textColor="#F33"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="@string/member_centre3"
+                        android:textColor="@color/text_color"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_withdrawals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/distribution_withdrawals2"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/distribution_center4"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    binding:onClickCommand="@{viewModel.onLookWithdraw}" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/mine_order_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="@string/myorder"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mine_money_card_title_ll" />
+            <!-- 我的订单 -->
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/mine_order_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/mine_order_tv_title"
+                binding:adapter="@{orderListItemBindingAdapter}"
+                binding:itemBinding="@{viewModel.itemBinding}"
+                binding:items="@{viewModel.orderItemList}"
+                binding:layoutManager="@{LayoutManagers.grid(4, 1,false)}" />
+
+            <TextView
+                android:id="@+id/mine_sell_center_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="@string/seller_center"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mine_order_recyclerView" />
+            <!-- 卖家中心-->
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/mine_sell_center_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/mine_sell_center_tv_title"
+                binding:adapter="@{sellCenterListItemBindingAdapter}"
+                binding:itemBinding="@{viewModel.sellerCenteritemBinding}"
+                binding:items="@{viewModel.sellerCenterItemList}"
+                binding:layoutManager="@{LayoutManagers.grid(4, 1,false)}" />
+
+            <TextView
+                android:id="@+id/mine_Member_benefits_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="@string/welfare"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mine_sell_center_recyclerView" />
+            <!--会员福利-->
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/mine_Member_benefits_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/mine_Member_benefits_tv_title"
+                binding:adapter="@{memberBenefitsListItemBindingAdapter}"
+                binding:itemBinding="@{viewModel.memberBenefitsItemBinding}"
+                binding:items="@{viewModel.memberBenefitsItemList}"
+                binding:layoutManager="@{LayoutManagers.grid(4, 1,false)}" />
+
+            <TextView
+                android:id="@+id/mine_platform_service_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="@string/platformServices"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mine_Member_benefits_recyclerView" />
+            <!--平台服务-->
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/mine_platform_service_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/mine_platform_service_tv_title"
+                binding:adapter="@{platformServiceListItemBindingAdapter}"
+                binding:itemBinding="@{viewModel.platformServiceItemBinding}"
+                binding:items="@{viewModel.platformServiceItemList}"
+                binding:layoutManager="@{LayoutManagers.grid(4, 1,false)}" />
+
+            <TextView
+                android:id="@+id/mine_platform_application_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="@string/PlatformApplication"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mine_platform_service_recyclerView" />
+            <!--平台应用-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mine_platform_application_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/mine_platform_application_tv_title"
+                binding:adapter="@{platformApplicationListItemBindingAdapter}"
+                binding:itemBinding="@{viewModel.platformApplicationItemBinding}"
+                binding:items="@{viewModel.platformApplicationItemList}"
+                binding:layoutManager="@{LayoutManagers.grid(4, 1,false)}" />
+
+            <TextView
+                android:id="@+id/mine_guess_like_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="@string/guessulike"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mine_platform_application_recyclerView" />
+            <!--            猜你喜欢-->
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/mine_guess_like_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/mine_guess_like_tv_title"
+                binding:adapter="@{guessLikeListItemBindingAdapter}"
+                binding:itemBinding="@{viewModel.guessLikeItemBinding}"
+                binding:items="@{viewModel.guessLikeItemList}"
+                binding:layoutManager="@{LayoutManagers.grid(2, 1,false)}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>
